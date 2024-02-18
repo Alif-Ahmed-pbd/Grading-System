@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Student List</title>
+{% endblock title %}
+
+{% block body_content %}
+<div>
+    {% for students in students %}
+        <h5 class="card-header">Your Profile</h5>
+        <div class="card-body">
+            <h5 class="card-title"> Name: {{students.Name}} </h5>
+            <h5 class="card-text">Age: {{students.Age}} </h5>
+            <p class="card-text">Department: {{students.Department}} </p>
+            <p class="card-text">Gender:{{students.gender}}  </p>
+            <p class="card-text">Subjects:{{students.Subjects}}  </p>
+        </div>
+        <a href="#">
+            <button type="submit" class="btn btn-primary"> Edit Profile</button>
+        </a>
+        <a href="{% url 'user_delete' students.id %}">
+            <button type="submit" class="btn btn-danger"> Delete Profile</button>
+        </a>
+    {% endfor %}
+</div>
+{% endblock body_content %}

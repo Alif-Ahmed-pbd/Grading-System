@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Add Subjects to Student</title>
+{% endblock title %}
+
+
+{% block body_content %}
+<div>
+  <form method="post" action="{% url 'add_subjects_to_student' student_id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Subject</button>
+  </form>
+ 
+
+</div>
+{% endblock body_content %}
+
+
+
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Subject List</title>
+{% endblock title %}
+
+{% block body_content %}
+
+<ul>
+    {% for subject in subjects %}
+        <li>{{ subject.subjects_name }} - {{ subject.subjects_code }} - {{ subject.subjects_credit }}</li>
+    {% endfor %}
+</ul>
+
+<p><a href="{% url 'home' %}">Back to Home</a></p>
+{% endblock body_content %}
+
+
+
